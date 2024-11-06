@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Nhân sự</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+        
+        <div id="organization" class="section">
+            <h2>Quản lý Tổ chức</h2>
+            <form id="orgForm">
+                <input type="text" id="orgName" placeholder="Tên tổ chức" required>
+                <button type="submit">Thêm Tổ chức</button>
+            </form>
+            <div id="orgList"></div>
+        </div>
+
+        <div id="department" class="section">
+            <h2>Quản lý Phòng ban</h2>
+            <form id="deptForm">
+                <select id="orgSelect" required>
+                    <option value="">Chọn tổ chức</option>
+                </select>
+                <input type="text" id="deptName" placeholder="Tên phòng ban" required>
+                <input type="text" id="deptCode" placeholder="Mã phòng ban" required>
+                <button type="submit">Thêm Phòng ban</button>
+            </form>
+            <div id="deptList"></div>
+        </div>
+
+        <div id="employee" class="section">
+            <h2>Quản lý Nhân viên</h2>
+            <form id="empForm">
+                <select id="deptSelect" required>
+                    <option value="">Chọn phòng ban</option>
+                </select>
+                <input type="text" id="empId" placeholder="Mã nhân viên" required>
+                <input type="text" id="empName" placeholder="Tên nhân viên" required>
+                <select id="empGender" required>
+                    <option value="">Chọn giới tính</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+                <input type="number" id="empBirthYear" placeholder="Năm sinh" required>
+                <select id="empPosition" required>
+                    <option value="">Chọn chức vụ</option>
+                    <option value="Trưởng phòng">Trưởng phòng</option>
+                    <option value="Phó phòng">Phó phòng</option>
+                    <option value="Nhân viên">Nhân viên</option>
+                </select>
+                <input type="number" id="empOvertime" placeholder="Số giờ làm thêm" required>
+                <button type="submit">Thêm Nhân viên</button>
+            </form>
+            <div id="empList"></div>
+        </div>
+
+        <div id="evaluation" class="section">
+            <h2>Đánh giá Nhân viên</h2>
+            <form id="evalForm">
+                <select id="empEvalSelect" required>
+                    <option value="">Chọn nhân viên</option>
+                </select>
+                <div id="evalCriteria"></div>
+                <button type="submit">Lưu Đánh giá</button>
+            </form>
+            <div id="evalList"></div>
+        </div>
+
+        <div id="reports" class="section">
+            <h2>Báo cáo</h2>
+            <button onclick="printEmployeeList()">In Danh sách Nhân viên</button>
+            <button onclick="printEvaluationReport()">In Báo cáo Đánh giá</button>
+            <button onclick="printEvaluationCriteria()">In Tiêu chuẩn Đánh giá</button>
+            <div id="reportContent"></div>
+        </div>
+    
+
+    <script src="script1.js"></script>
+</body>
+</html>
